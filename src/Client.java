@@ -11,25 +11,24 @@ public class Client {
         this.nif = nif;
         this.nom = nom;
         this.telefon = telefon;
-        this.lloguers = new Vector<Lloguer>();
+        this.lloguers = new Vector<Lloguer>(10,10);
     }
 
-    public String getNif()     { return nif;     }
-    public String getNom()     { return nom;     }
-    public String getTelefon() { return telefon; }
+    public String getNif()     { return nif;}
+    public String getNom()     { return nom;}
+    public String getTelefon() { return telefon;}
 
     public void setNif(String nif) { this.nif = nif; }
     public void setNom(String nom) { this.nom = nom; }
-    public void setTelefon(String telefon) {
-        this.telefon = telefon;
-    }
+    public void setTelefon(String telefon) { this.telefon = telefon; }
+
     public void afegeix(Lloguer lloguer) {
-        if (! lloguers.contains(lloguer) ) {
+        if (!lloguers.contains(lloguer)) {
             lloguers.add(lloguer);
         }
     }
     public void elimina(Lloguer lloguer) {
-        if (lloguers.contains(lloguer) ) {
+        if (lloguers.contains(lloguer)) {
             lloguers.remove(lloguer);
         }
     }
@@ -40,5 +39,10 @@ public class Client {
     public String informe() {
         // XXX: de moment buit
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "el amigo "+ nom + " amb el dni " + nif + " i amb telèfon " + telefon + lloguers.toString();
     }
 }
