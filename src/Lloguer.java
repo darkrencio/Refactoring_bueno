@@ -11,7 +11,7 @@ public class Lloguer {
     Lloguer(Date data, Integer dies, Vehicle vehicle){
         this.data = data;
         this.dies = dies;
-        Vehicle boyo = new Vehicle(vehicle);
+        this.id = vehicle;
     }
 
     public void setData(Date data) {this.data = data;}
@@ -23,5 +23,9 @@ public class Lloguer {
     @Override
     public String toString() {
         return " to String de Lloguer: " + data + " " + dies + id.toString();
+    }
+
+    public Vehicle getVehicle() {
+        return null;
     }
 }
