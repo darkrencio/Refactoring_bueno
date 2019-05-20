@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class GestorLloguersLite {
-    public static void main(String[] args) throws ParseException{
+    public static void main(String[] args) throws ParseException {
         // demostració de construcció d'un vehicle de categoria BASIC
         Vehicle vehicleBasic = new Vehicle("Corsa", "Opel", Vehicle.BASIC);
         Vehicle vehicleGeneral = new Vehicle("CL6", "Mercedez", Vehicle.GENERAL);
@@ -16,7 +16,7 @@ public class GestorLloguersLite {
         Lloguer lloguerGeneral = new Lloguer(date, 3, vehicleGeneral);
         Lloguer lloguerLuxe = new Lloguer(date, 4, vehicleLuxe);
 
-        Client isvy = new Client("Y1846344X","Isvy Kelison","665239406");
+        Client isvy = new Client("Y1846344X", "Isvy Kelison", "665239406");
         isvy.afegeix(lloguerBasic);
         isvy.afegeix(lloguerGeneral);
         isvy.afegeix(lloguerLuxe);
@@ -28,7 +28,8 @@ public class GestorLloguersLite {
         printLloguer(isvy);
 
     }
-    public static void printLloguer (Client client){
+
+    public static void printLloguer(Client client) {
         System.out.println("Client: " + client.getNom() + "\n        " + client.getNif() + "\n        " + client.getTelefon());
         for (int i = 0; i < client.getClientes(); i++) {
             System.out.println("\nLloguers: " + client.getClientes() + "\n   1. vehicle:" + client.getLloguers().get(i).getVehicle() + "/" + client.getLloguers().get(i).getVehicle().getMarca() + "\n      data d'inici: " + client.getLloguers().get(i).getData() + "\n      dies llogats: " + client.getLloguers().get(i).getDies());
