@@ -1,21 +1,23 @@
+import java.util.Date;
+
 public class Lloguer {
     //private Lloguer lloguer;
-    private String data;
+    private Date data;
     private Integer dies;
     private Vehicle id;
 
     Lloguer(){}
 
-    Lloguer(String data, Integer dies){
+    Lloguer(Date data, Integer dies, Vehicle vehicle){
         this.data = data;
         this.dies = dies;
-        this.id = new Vehicle("supra", "toyota", "urbano");
+        Vehicle boyo = new Vehicle(vehicle);
     }
 
-    public void setData(String data) {this.data = data;}
+    public void setData(Date data) {this.data = data;}
     public void setDies(Integer dies) {this.dies = dies;}
 
-    public String getData() {return data;}
+    public Date getData() {return data;}
     public Integer getDies() {return dies;}
 
     @Override
