@@ -1,5 +1,3 @@
-import java.util.Locale;
-
 public class Vehicle {
     public static final int BASIC = 0;
     public static final int GENERAL = 1;

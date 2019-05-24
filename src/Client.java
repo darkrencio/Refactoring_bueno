@@ -7,6 +7,8 @@ public class Client {
     private String telefon;
     private Vector<Lloguer> lloguers;
 
+    Client(){}
+
     public Client(String nif, String nom, String telefon) {
         this.nif = nif;
         this.nom = nom;
@@ -40,7 +42,6 @@ public class Client {
     public Vector<Lloguer> getLloguers() {
         return lloguers;
     }
-
 
     public String informe() {
         double total = 0;

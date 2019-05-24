@@ -26,6 +26,6 @@ public class Lloguer {
     }
 
     public Vehicle getVehicle() {
-        return null;
+        return id;
     }
 }
