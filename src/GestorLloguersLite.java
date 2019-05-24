@@ -25,8 +25,9 @@ public class GestorLloguersLite {
         System.out.println(dateFormat.format(lloguerBasic.getData()));
 
         // Provant printLloguer
-        printLloguer(isvy);
+        //printLloguer(isvy);
 
+        System.out.println(isvy.informe());
     }
 
     public static void printLloguer(Client client) {

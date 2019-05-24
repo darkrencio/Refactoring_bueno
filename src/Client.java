@@ -41,7 +41,7 @@ public class Client {
         return lloguers;
     }
 
-    /*
+
     public String informe() {
         double total = 0;
         int bonificacions = 0;
@@ -91,7 +91,7 @@ public class Client {
                 "Punts guanyats: " + bonificacions + "\n";
         return resultat;
     }
-    */
+
     @Override
     public String toString() {
         return "el amigo "+ nom + " amb el dni " + nif + " i amb telèfon " + telefon + lloguers.toString();
