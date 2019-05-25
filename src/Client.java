@@ -6,6 +6,7 @@ public class Client {
     private String nom;
     private String telefon;
     private Vector<Lloguer> lloguers;
+    private Lloguer boni;
 
     Client(){}
 
