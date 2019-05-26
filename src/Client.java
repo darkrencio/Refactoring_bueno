@@ -6,7 +6,6 @@ public class Client {
     private String nom;
     private String telefon;
     private Vector<Lloguer> lloguers;
-    private Lloguer boni;
 
     Client(){}
 
@@ -45,26 +44,39 @@ public class Client {
     }
 
     public String informe() {
-        double total = 0;
-        int bonificacions = 0;
         String resultat = "Informe de lloguers del client " +
                 getNom() +
                 " (" + getNif() + ")\n";
         for (Lloguer lloguer: lloguers) {
-            bonificacions += lloguer.bonificacions();
             // composa els resultats d'aquest lloguer
             resultat += "\t" +
                     lloguer.getVehicle().getMarca() +
                     " " +
                     lloguer.getVehicle().getModel() + ": " +
                     (lloguer.quantitat() * 30) + "€" + "\n";
-            total += lloguer.quantitat() * 30;
         }
 
         // afegeix informació final
-        resultat += "Import a pagar: " + total + "€\n" +
-                "Punts guanyats: " + bonificacions + "\n";
+        resultat += "Import a pagar: " + importTotal() + "€\n" +
+                "Punts guanyats: " + bonificacionsTotals() + "\n";
         return resultat;
+    }
+
+    public double importTotal(){
+        double total = 0;
+        for (Lloguer lloguer: lloguers) {
+            total += lloguer.quantitat() * 30;
+        }
+        return total;
+    }
+
+
+    public int bonificacionsTotals(){
+        int bonificaciones = 0;
+        for (Lloguer lloguer: lloguers) {
+            lloguer.bonificacions();
+        }
+        return bonificaciones;
     }
 
     @Override
