@@ -43,15 +43,6 @@ public class Client {
         return lloguers;
     }
 
-    public String informe() {
-        String informe = new InformeDeClient(this).informe();
-        return informe;
-    }
-
-    public String informeHTML(){
-        String informeHTML = new InformeDeClient(this).informeHTML();
-        return informeHTML;
-    }
 
     public double importTotal(){
         double total = 0;
