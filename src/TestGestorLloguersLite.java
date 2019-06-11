@@ -137,4 +137,29 @@ public class TestGestorLloguersLite {
                 "Punts guanyats: 1\n";
         Assert.assertEquals(resultat, informe);
     }
+
+    @Test
+    public void testInforme2LUXEHTML() throws ParseException {
+        Vehicle vehicleLuxe = new Vehicle("Enzo", "Ferrari", Vehicle.LUXE);
+        Vehicle vehicleLuxe2 = new Vehicle("Enzo", "Ferrari", Vehicle.LUXE);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("d/M/yyyy");
+        Date date = dateFormat.parse("2/8/2013");
+        Date date2 = dateFormat.parse("9/8/2013");
+        Lloguer lloguerLuxe = new Lloguer(date, 2, vehicleLuxe);
+        Lloguer lloguerLuxe2 = new Lloguer(date, 2, vehicleLuxe2);
+        Client isvy = new Client("Y1846344X", "Isvy Kelison", "665239406");
+        isvy.afegeix(lloguerLuxe);
+        isvy.afegeix(lloguerLuxe2);
+        String informe = isvy.informeHTML();
+        String resultat = "<h1>Informe de lloguers</h1>\n" +
+                "<p>Informe de lloguers del client <em>Ken Robinson </em> (<strong>43092837A</strong>)</p>\n" +
+                "<table>\n" +
+                "<tr><td><strong>Marca</strong></td><td><strong>Model</strong></td><td><strong>Import</strong></td></tr>     <tr><td>Tata</td><td>Vista</td><td>90.0€</td></tr>\n" +
+                "    <tr><td>Wolswagen</td><td>Passat</td><td>270.0€</td></tr>\n" +
+                "    <tr><td>Mercedes</td><td>SLK 2.0</td><td>360.0€</td></tr>\n" +
+                "</table>\n" +
+                "<p>Import a pagar: <em>720.0€</em></p>\n" +
+                "<p>Punts guanyats: <em>4</em></p>";
+        Assert.assertEquals(resultat, informe);
+    }
 }
