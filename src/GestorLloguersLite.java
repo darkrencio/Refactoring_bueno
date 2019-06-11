@@ -28,7 +28,7 @@ public class GestorLloguersLite {
         // Provant printLloguer
         printLloguer(isvy);
 
-        System.out.println(isvy.informe());
+        /*System.out.println(isvy.informe());*/
     }
 
     public static void printLloguer(Client client) {

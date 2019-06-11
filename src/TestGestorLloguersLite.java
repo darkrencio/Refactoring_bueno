@@ -1,7 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.text.ParseException;
+/*import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -163,3 +163,4 @@ public class TestGestorLloguersLite {
         Assert.assertEquals(resultat, informe);
     }
 }
+*/
