@@ -11,7 +11,7 @@ public class TestInformeDeClient {
             Client isvy = new Client("Y1846344X", "Isvy Kelison", "665239406");
             InformeDeClient info = new InformeDeClient(isvy);
             String informe = info.informe();
-            String resultat = "Informe de lloguers del client Isvy Kelison (Y1846344X)\n" +
+            String resultat = ("Informe de lloguers del client Isvy Kelison (Y1846344X)\n") +
                     "Import a pagar: 0.0€\n" +
                     "Punts guanyats: 0\n";
             Assert.assertEquals(resultat, informe);
