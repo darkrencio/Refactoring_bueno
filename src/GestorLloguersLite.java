@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.text.ParseException;
@@ -42,7 +43,11 @@ public class GestorLloguersLite {
     @Test
     public void testInforme0(){
         Client isvy = new Client("Y1846344X", "Isvy Kelison", "665239406");
-        System.out.println(isvy.informe());
+        String informe = isvy.informe();
+        String resultat = "Informe de lloguers del client Isvy Kelison (Y1846344X)\n" +
+                "Import a pagar: 0.0€\n" +
+                "Punts guanyats: 0\n";
+        Assert.assertEquals(resultat, informe);
     }
 
     @Test
@@ -53,7 +58,12 @@ public class GestorLloguersLite {
         Lloguer lloguerBasic = new Lloguer(date, 2, vehicleBasic);
         Client isvy = new Client("Y1846344X", "Isvy Kelison", "665239406");
         isvy.afegeix(lloguerBasic);
-        System.out.println(isvy.informe());
+        String informe = isvy.informe();
+        String resultat = "Informe de lloguers del client Isvy Kelison (Y1846344X)\n" +
+                "\tOpel Corsa: 90.0€\n" +
+                "Import a pagar: 90.0€\n" +
+                "Punts guanyats: 1\n";
+        Assert.assertEquals(resultat, informe);
     }
     @Test
     public void testInforme2BASIC() throws ParseException {
@@ -67,7 +77,13 @@ public class GestorLloguersLite {
         Client isvy = new Client("Y1846344X", "Isvy Kelison", "665239406");
         isvy.afegeix(lloguerBasic);
         isvy.afegeix(lloguerBasic2);
-        System.out.println(isvy.informe());
+        String informe = isvy.informe();
+        String resultat = "Informe de lloguers del client Isvy Kelison (Y1846344X)\n" +
+                "\tOpel Corsa: 90.0€\n" +
+                "\tIbiza Seat: 90.0€\n" +
+                "Import a pagar: 180.0€\n" +
+                "Punts guanyats: 2\n";
+        Assert.assertEquals(resultat, informe);
     }
     @Test
     public void testInforme1GENERAL() throws ParseException {
@@ -77,7 +93,12 @@ public class GestorLloguersLite {
         Lloguer lloguerGeneral = new Lloguer(date, 2, vehicleGeneral);
         Client isvy = new Client("Y1846344X", "Isvy Kelison", "665239406");
         isvy.afegeix(lloguerGeneral);
-        System.out.println(isvy.informe());
+        String informe = isvy.informe();
+        String resultat = "Informe de lloguers del client Isvy Kelison (Y1846344X)\n" +
+                "\tMercedez CL6: 120.0€\n" +
+                "Import a pagar: 120.0€\n" +
+                "Punts guanyats: 1\n";
+        Assert.assertEquals(resultat, informe);
     }
     @Test
     public void testInforme2GENERAL() throws ParseException {
@@ -91,7 +112,13 @@ public class GestorLloguersLite {
         Client isvy = new Client("Y1846344X", "Isvy Kelison", "665239406");
         isvy.afegeix(lloguerGeneral);
         isvy.afegeix(lloguerGeneral2);
-        System.out.println(isvy.informe());
+        String informe = isvy.informe();
+        String resultat = "Informe de lloguers del client Isvy Kelison (Y1846344X)\n" +
+                "\tMercedez CL6: 120.0€\n" +
+                "\tMercedez CL6: 120.0€\n" +
+                "Import a pagar: 240.0€\n" +
+                "Punts guanyats: 2\n";
+        Assert.assertEquals(resultat, informe);
     }
     @Test
     public void testInforme1LUXE() throws ParseException {
@@ -101,7 +128,12 @@ public class GestorLloguersLite {
         Lloguer lloguerLuxer = new Lloguer(date, 2, vehicleLuxe);
         Client isvy = new Client("Y1846344X", "Isvy Kelison", "665239406");
         isvy.afegeix(lloguerLuxer);
-        System.out.println(isvy.informe());
+        String informe = isvy.informe();
+        String resultat = "Informe de lloguers del client Isvy Kelison (Y1846344X)\n" +
+                "\tFerrari Enzo: 360.0€\n" +
+                "Import a pagar: 360.0€\n" +
+                "Punts guanyats: 2\n";
+        Assert.assertEquals(resultat, informe);
     }
     @Test
     public void testInforme2LUXE() throws ParseException {
@@ -115,7 +147,13 @@ public class GestorLloguersLite {
         Client isvy = new Client("Y1846344X", "Isvy Kelison", "665239406");
         isvy.afegeix(lloguerLuxe);
         isvy.afegeix(lloguerLuxe2);
-        System.out.println(isvy.informe());
+        String informe = isvy.informe();
+        String resultat = "Informe de lloguers del client Isvy Kelison (Y1846344X)\n" +
+                "\tFerrari Enzo: 360.0€\n" +
+                "\tFerrari Enzo: 360.0€\n" +
+                "Import a pagar: 720.0€\n" +
+                "Punts guanyats: 4\n";
+        Assert.assertEquals(resultat, informe);
     }
 
     @Test
@@ -126,7 +164,12 @@ public class GestorLloguersLite {
         Lloguer lloguerLuxer = new Lloguer(date, 1, vehicleLuxe);
         Client isvy = new Client("Y1846344X", "Isvy Kelison", "665239406");
         isvy.afegeix(lloguerLuxer);
-        System.out.println(isvy.informe());
+        String informe = isvy.informe();
+        String resultat = "Informe de lloguers del client Isvy Kelison (Y1846344X)\n" +
+                "\tFerrari Enzo: 180.0€\n" +
+                "Import a pagar: 180.0€\n" +
+                "Punts guanyats: 1\n";
+        Assert.assertEquals(resultat, informe);
     }
 
 
